@@ -81,7 +81,6 @@ function calculateSumAdvanced() {
   let numbersSum = 0;
 
   getNumbersArray(filterByNumberAndString).forEach(item => {
-    console.log(item)
     if (typeof item === "string") {
       numbersSum += parseInt(item);
     }
