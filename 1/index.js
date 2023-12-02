@@ -1,6 +1,6 @@
 const fs = require('node:fs');
 
-const file = fs.readFileSync('./index2.txt', 'utf-8');
+const file = fs.readFileSync('./index.txt', 'utf-8');
 
 const linesArr = file.split('\n');
 
@@ -32,7 +32,7 @@ function filterByNumberAndString(item) {
 
   let currentWord = "";
 
-  for (let i = 0; i < item.length - 1; i++) {
+  for (let i = 0; i < item.length; i++) {
     currentWord += item[i]
     for (let j = 0; j < keys.length; j++) {
       keys.forEach((key) => {
@@ -40,11 +40,13 @@ function filterByNumberAndString(item) {
 
         currentWord = currentWord.replace(regex, stringsAndNumbers[key]);
       });
-
     }
-
   }
+
   currentWord.split('').forEach(char => /[0-9]/.test(char) && numbers.push(char))
+
+
+  console.log(currentWord)
 
   return numbers;
 }
@@ -83,6 +85,7 @@ function calculateSumAdvanced() {
   let numbersSum = 0;
 
   getNumbersArray(filterByNumberAndString).forEach(item => {
+    console.log(item)
     if (typeof item === "string") {
       numbersSum += parseInt(item);
     }
