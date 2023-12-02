@@ -45,9 +45,6 @@ function filterByNumberAndString(item) {
 
   currentWord.split('').forEach(char => /[0-9]/.test(char) && numbers.push(char))
 
-
-  console.log(currentWord)
-
   return numbers;
 }
 
