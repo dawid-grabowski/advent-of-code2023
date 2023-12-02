@@ -16,7 +16,6 @@ const stringsAndNumbers = {
   one: "1",
 };
 
-
 function filterByNumber(item) {
   const numbers = []
 
@@ -92,4 +91,3 @@ function calculateSumAdvanced() {
 }
 
 console.log('Part 2 - answer:', calculateSumAdvanced());
-
